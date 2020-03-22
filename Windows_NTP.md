@@ -37,3 +37,18 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
     UpdateInterval    REG_DWORD    0x64
 ```
 
+### Set PhaseCorrectRate
+
+```
+C:\Windows\system32>reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate /t REG_DWORD /d 7 /f
+```
+
+### Get PhaseCorrectRate
+
+```
+C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
+    PhaseCorrectRate    REG_DWORD    0x7
+```
+```
