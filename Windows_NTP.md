@@ -19,3 +19,9 @@ C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Servic
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
     NtpServer    REG_SZ    ntp.nict.jp,0x8
 ```
+
+## Time synchronization
+
+### Set UpdateInterval
+
+### Get UpdateInterval
