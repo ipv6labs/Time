@@ -24,4 +24,16 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
 ### Set UpdateInterval
 
+```
+C:\Windows\system32>reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval /t REG_DWORD /d 100 /f
+```
+
 ### Get UpdateInterval
+
+```
+C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
+    UpdateInterval    REG_DWORD    0x64
+```
+
