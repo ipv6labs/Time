@@ -8,13 +8,13 @@
 ### Set NTP server
 
 ```
-C:\Windows\system32>reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer /t REG_SZ /d ntp.nict.jp,0x8 /f
+C:\Windows\system32> reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer /t REG_SZ /d ntp.nict.jp,0x8 /f
 ```
 
 ### Get NTP server
 
 ```
-C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
+C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
     NtpServer    REG_SZ    ntp.nict.jp,0x8
@@ -25,13 +25,13 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 ### Set UpdateInterval
 
 ```
-C:\Windows\system32>reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval /t REG_DWORD /d 100 /f
+C:\Windows\system32> reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval /t REG_DWORD /d 100 /f
 ```
 
 ### Get UpdateInterval
 
 ```
-C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval
+C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
     UpdateInterval    REG_DWORD    0x64
@@ -40,15 +40,24 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
 ### Set PhaseCorrectRate
 
 ```
-C:\Windows\system32>reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate /t REG_DWORD /d 7 /f
+C:\Windows\system32> reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate /t REG_DWORD /d 7 /f
 ```
 
 ### Get PhaseCorrectRate
 
 ```
-C:\Windows\system32>reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate
+C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
     PhaseCorrectRate    REG_DWORD    0x7
 ```
+
+### Service restart
+
+```
+C:\Windows\system32> net stop w32time
+
+C:\Windows\system32> net start w32time
+
+C:\Windows\system32> w32tm /resync
 ```
