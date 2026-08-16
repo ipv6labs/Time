@@ -14,12 +14,13 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters 
 
 ### Get NTP server
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
-
+reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
+```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
     NtpServer    REG_SZ    ntp.nict.jp,0x8
-```
+
 
 ## Time synchronization
 
