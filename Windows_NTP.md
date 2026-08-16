@@ -18,6 +18,7 @@ C:\Windows\system32>
 ```
 reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
 ```
+Output
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
     NtpServer    REG_SZ    ntp.nict.jp,0x8
@@ -27,40 +28,51 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
 ### Set UpdateInterval
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval /t REG_DWORD /d 100 /f
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval /t REG_DWORD /d 100 /f
 ```
 
 ### Get UpdateInterval
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval
-
+reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v UpdateInterval
+```
+Output
+```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
     UpdateInterval    REG_DWORD    0x64
 ```
 
 ### Set PhaseCorrectRate
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate /t REG_DWORD /d 7 /f
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate /t REG_DWORD /d 7 /f
 ```
 
 ### Get PhaseCorrectRate
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate
-
+reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config /v PhaseCorrectRate
+```
+Output
+```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
     PhaseCorrectRate    REG_DWORD    0x7
 ```
 
 ### Service restart
 
+C:\Windows\system32>
 ```
-C:\Windows\system32> net stop w32time
-
-C:\Windows\system32> net start w32time
-
-C:\Windows\system32> w32tm /resync
+net stop w32time
+```
+```
+net start w32time
+```
+```
+w32tm /resync
 ```
